@@ -1,26 +1,20 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import SendIcon from '@material-ui/icons/Send';
-import DeleteIcon from '@material-ui/icons/Delete';
+
+import Header from './components/Header'
+import CheckboxExample from './components/CheckboxExample';
+import Gridlayout from './components/Gridlayout';
+import TextFieldinput from './components/TextField';
+import ButtonGroupEx from './components/ButtonGroupEx'
+
 import Button from '@material-ui/core/Button';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import TextField from '@material-ui/core/TextField';
 import { lightBlue, lightGreen } from '@material-ui/core/colors';
 import 'fontsource-roboto';
-import Typography from '@material-ui/core/Typography';
 
 import Container from '@material-ui/core/Container';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid'; 
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
+import Typography from '@material-ui/core/Typography';
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -55,76 +49,23 @@ function ButtonStyled() {
   return <Button className={classes.root}>Button Styled</Button>
 }
 
-function CheckboxExample() {
-  const [checked, setChecked] = useState(true);
 
-  return (
-    <FormControlLabel
-      control={<Checkbox
-        checked={checked}
-        icon={<DeleteIcon />}
-        checkedIcon={<DeleteIcon />}
-        onChange={(e) => setChecked(e.target.checked)}
-        inputProps={{'aria-label': 'secondary checkbox'}}
-      />}
-      label="Testing Checkbox"
-    >
-    </FormControlLabel>
-    
-  )
-}
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="sm">
+      <Container >
         <div className="App">
           <header className="App-header">
-            <AppBar>
-              <Toolbar>
-                <IconButton>
-                  <MenuIcon />
-                </IconButton>
-                <Typography variant="h6">Kodeine</Typography>
-                <Button>Login</Button>
-              </Toolbar>
-            </AppBar>
+            <Header />
             <Typography variant="h2">
               Welcome to Material UI
             </Typography>
             <ButtonStyled />
-            <Grid container spacing={2} justify="center">
-              <Grid item xs={3} sm={6}>
-                <Paper style={{height: 75, width: '100%'}} />
-              </Grid>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{height: 75, width: '100%'}} />
-              </Grid>
-              <Grid item xs={3} sm={6}>
-                <Paper style={{height: 75, width: '100%'}} />
-              </Grid>
-            </Grid>
-            < TextField
-              variant="outlined"
-              color="secondary"
-              type="email"
-              label="Email"
-              placeholder="test@test.com"
-            />
+            <TextFieldinput />
+            <Gridlayout />
             <CheckboxExample />
-            <ButtonGroup variant="contained" color="primary" size="large">
-              <Button
-                startIcon={<SendIcon />}
-              >
-                Alert
-              </Button>
-              <Button
-                startIcon={<DeleteIcon />}
-              >
-                delete
-              </Button>
-            </ButtonGroup>
-            <img src={logo} className="App-logo" alt="logo" />
+            <ButtonGroupEx />
           </header>
         </div>
       </Container>
