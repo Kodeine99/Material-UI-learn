@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Header from './components/Header'
+import Header from './components/NavBar/Header'
 
 import 'fontsource-roboto';
 // import Typography from '@material-ui/core/Typography';
