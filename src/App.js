@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import Header from './components/NavBar/Header'
+import Header from './components/NavBar/Header';
+import NavBar from './components/NavBar/NavBar'
 
 import 'fontsource-roboto';
 // import Typography from '@material-ui/core/Typography';
@@ -12,7 +13,8 @@ function App() {
   return (
     <Grid container direction="column">
       <Grid item>
-        <Header />
+        {/* <Header /> */}
+        <NavBar />
       </Grid>
       <Grid item container>
         <Grid item xs={false} sm={2} />
