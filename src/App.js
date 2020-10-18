@@ -6,9 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import About from './components/pages/About/AboutUs';
 import Home from './components/pages/Home/Home';
-// import Products from './components/pages/Products/ProductsContainer';
 
-import Header from './components/NavBar/Header';
 import NavBar from './components/NavBar/NavBar';
 
 import 'fontsource-roboto';
