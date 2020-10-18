@@ -1,29 +1,35 @@
 import React from 'react';
 import './App.css';
 
+import { MemoryRouter as Router } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
+
+import About from './components/pages/About/AboutUs';
+import Home from './components/pages/Home/Home';
+// import Products from './components/pages/Products/ProductsContainer';
+
 import Header from './components/NavBar/Header';
-import NavBar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar';
 
 import 'fontsource-roboto';
 // import Typography from '@material-ui/core/Typography';
-import ProductsContainer from './components/Products/ProductsContainer';
+import ProductsContainer from './components/pages/Products/ProductsContainer';
 import {Grid} from '@material-ui/core'
 
 function App() {
   return (
-    <Grid container direction="column">
-      <Grid item>
-        {/* <Header /> */}
-        <NavBar />
-      </Grid>
-      <Grid item container>
-        <Grid item xs={false} sm={2} />
-        <Grid item xs={12} sm={8}>
-          <ProductsContainer />
+    <Router>
+      <Grid container direction="column">
+        <Grid item>
+          <NavBar />
         </Grid>
-        <Grid item xs={false} sm={2} />
       </Grid>
-    </Grid>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/About" exact component={About} />
+        <Route path="/Products" exact component={ProductsContainer} />
+      </Switch> 
+    </Router>
   )
 }
 

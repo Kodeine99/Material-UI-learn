@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
@@ -30,32 +32,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-function NavBar(props) {
+function NavBar() {
     const classes = useStyles();
-    return (
-        <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
+  return (
+    <AppBar position="static" color="inherit" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
             KdShop
           </Typography>
-          <nav>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              Products
-            </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              About Us
-            </Link>
-            <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-              Support
-            </Link>
-          </nav>
-          <Button href="#" color="primary" variant="outlined" className={classes.link}>
-            Login
-          </Button>
-        </Toolbar>
-      </AppBar>
-    );
+        <nav>
+          <Link variant="button" color="textPrimary" component={RouterLink} to="/Home" className={classes.link}>
+            Home
+          </Link>
+          <Link variant="button" color="textPrimary" component={RouterLink} to="/Products" className={classes.link}>
+            Products
+          </Link>
+          <Link variant="button" color="textPrimary" component={RouterLink} to="/About" className={classes.link}>
+            About Us
+          </Link>
+          <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+            Support
+          </Link>
+        </nav>
+        <Button href="#" color="primary" variant="outlined" className={classes.link}>
+          Login
+        </Button>
+      </Toolbar>
+    </AppBar>
+  );
 }
 
 export default NavBar;

@@ -12,8 +12,15 @@ function ProductsContainer() {
         );
     }
     return (
-        <Grid container spacing={4}>
-            {ProductList.map(ProductListObj => getProductList(ProductListObj))}
+        <Grid item container>
+            <Grid item xs={false} sm={2} />
+                <Grid item xs={12} sm={8}>
+                {/* <ProductsContainer /> */}
+                <Grid container spacing={4}>
+                    {ProductList.map(ProductListObj => getProductList(ProductListObj))}
+                </Grid>
+            </Grid>
+            <Grid item xs={false} sm={2} />
         </Grid>
     );
 }

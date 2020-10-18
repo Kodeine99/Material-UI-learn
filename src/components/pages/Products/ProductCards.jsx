@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import ShareIcon from '@material-ui/icons/Share';
+// import ShareIcon from '@material-ui/icons/Share';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import CardMedia from '@material-ui/core/CardMedia';
 
 
@@ -41,7 +42,7 @@ function ProductCards(props) {
         }
         action={
           <IconButton aria-label="settings">
-            <ShareIcon />
+            <AddShoppingCartIcon />
           </IconButton>
         }
         title={title}
