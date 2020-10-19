@@ -55,7 +55,7 @@ function ProductCards(props) {
         </Typography>
       </CardContent>
       <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button variant="outlined" color="secondary" size="small">Buy Now</Button>
       </CardActions>
     </Card>
   );
