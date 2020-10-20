@@ -1,10 +1,11 @@
+import { Container } from '@material-ui/core';
 import React from 'react';
 
 function Home() {
     return (
-        <div>
+        <Container>
             <h1>Home Page</h1>
-        </div>
+        </Container>
     );
 }
 

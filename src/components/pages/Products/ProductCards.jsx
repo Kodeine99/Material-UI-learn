@@ -28,6 +28,9 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  cartHeader: {
+    zIndex: '1'
+  }
 });
 
 
@@ -36,12 +39,12 @@ function ProductCards(props) {
   const {avatarUrl, title, subtitle, description, imgUrl} = props;
   return (
     <Card >
-      <CardHeader
+      <CardHeader className={classes.cartHeader}
         avatar={
           <Avatar src={avatarUrl} aria-label="recipe" className={classes.avatar} />
         }
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="settings" >
             <AddShoppingCartIcon />
           </IconButton>
         }
